@@ -1,0 +1,195 @@
+*{
+    margin:0;
+    padding:0;
+}
+:root{
+    --main-font: Helvetica;
+    --color1: #212121;
+    --color2: red;
+    --color3: #F9A825;
+    --main-border: 2px solid rgb(134, 134, 179);
+}
+
+/* classes */
+.flex{
+    display:flex;
+}
+.center{
+    justify-content: center;
+    align-items: center;
+}
+.email-border{
+    border:2px solid gray;
+    border-radius: 6px;
+}
+.quotes{
+    /* color: var(--color2); */
+    font-size: 1rem;
+}
+
+/* cabeçalho - COMEÇO*/
+#header{
+    flex-wrap: wrap;
+    background-color: var(--color1);
+}
+#header div#header-div {
+    justify-content:space-between;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 0 auto;
+}
+
+    /* logo - COMEÇO */
+header h1#logo{
+    height: 36px;
+    color: white;
+    padding-top: 4px; /*<---para consertar problema com a fonte helvetica*/
+    font-family: Helvetica;
+}    /* logo - FIM */
+
+    /* botoes - COMEÇO */
+header nav#buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+header nav#buttons a{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 90px;
+    height: 30px;
+    margin: auto;
+    font-family: var(--main-font);
+    text-decoration: none;
+    color: white;
+    padding-top: 4px;
+}
+nav#buttons a#home-button{
+    width: 100px;
+    background-color: var(--color3);
+    border-radius: 100px;
+}
+/* botoes - FIM */
+/* cabeçalho - FIM */
+
+/* main - COMEÇO */
+section#main-box {
+    width: 50%;
+    margin: 130px auto 160px auto;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+    /* texto - COMEÇO */
+#main-box #text-div{
+    width: 300px;
+    height: 250px;
+}
+#main-box #text{
+    border-right:1px dashed black;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 300px;
+    font-size: 0.8em;
+    text-align:center;
+}
+    /* texto - FIM */
+
+    /* formulario - COMEÇO */
+#main-box #form-div{
+    width: 300px;
+}
+#email-area{
+    flex-direction: column;
+    width: 300px;
+}
+#email-area #email-label {
+    text-indent: 1px;
+    font-family: var(--main-font);
+    font-size: 0.8em;
+    margin-bottom: 3px;
+}
+        /* caixa de texto */
+#email-area #email-box{
+    padding-left: 3px;
+    height: 25px;
+    margin-bottom: 13px;
+}
+        /* botao de envio */
+#email-area #email-button{
+    background-color: white;
+    width: 30%;
+    padding-top: 4px;
+    font-family: var(--main-font);
+    color: rgb(70, 70, 70);
+    font-weight: bold;
+}    /* formulario - FIM */
+/* main - FIM */
+
+/* rodape - COMEÇO */
+footer{
+    background-color: var(--color1);
+    height: 80px;
+}
+div#foot-div{
+    width: 80%;
+    margin: auto;
+}
+footer #footer-txt{
+    color: white;
+    font-family: var(--main-font);
+    font-weight: lighter;
+    font-size: 0.6em;
+}
+#footer-txt #copy{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+#footer-txt #cad{
+    font-size: 1.4em;
+    font-weight: bold;
+}
+#footer-txt #year{
+    font-size: 1.4em;
+}
+/* rodape - FIM */
+
+/* animations */
+    /* botoes do cabeçalho */
+nav#buttons a:hover {
+    background-color: var(--color2);
+}
+    /* botao de enviar do e-mail */
+#email-area input#email-button:hover {
+    cursor: pointer;
+}
+
+
+/* media query */
+@media screen and (max-width: 491px){
+        /* alinhar o cabeçalho */
+    #header div#header-div{
+        justify-content: center;
+    }
+}
+@media screen and (max-width:1219px) {
+        /* girar borda tracejada separadora */
+    #main-box #text {
+        border-bottom: 1px dashed black;
+        border-right: none;
+    }
+        /* melhorar proporção da seção do meio */
+    #main-box #text-div {
+        height: 200px;
+    }
+    #text-div #text {
+        padding-top: 0;
+    }
+    #main-box #email-area {
+        padding-bottom: 20px;
+    }
+        /* manter proporção da area de e-mail com a borda */
+    #main-box #email-area {
+        padding: 15px 2px 20px 2px;
+    }
+}
